@@ -19,6 +19,16 @@ make HOST=x86_64-pc-linux-gnu NO_QT=1 -C depends/ -j5
 ./autogen.sh
 ./configure --prefix=/bitcoinvault/depends/x86_64-pc-linux-gnu
 make -j5
+mkdir dist
+make DESTDIR=/bitcoinvault/dist install
+
+# Compress to tarball package
+cd dist/bitcoinvault/depends/
+mv x86_64-pc-linux-gnu bitcoinvault-0.18.0.0
+tar -cvzf bitcoinvault-0.18.0.0-x86_64-linux-gnu.tar.gz bitcoinvault-0.18.0.0
+
+# exit container and copy to host
+docker cp bvault-builder:/bitcoinvault/dist/bitcoinvault/depends/bitcoinvault-0.18.0.0-x86_64-linux-gnu.tar.gz ~/bvault-builder
 ```
 
 ### macOS SDK
