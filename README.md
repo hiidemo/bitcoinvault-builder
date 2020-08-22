@@ -17,7 +17,7 @@ docker run -it --name debian-depends --workdir /bitcoinvault debian-depends /bin
 # Inside the container: build depends for RISCV-64 bit, skipping Qt packages
 make HOST=x86_64-pc-linux-gnu NO_QT=1 -C depends/ -j5
 ./autogen.sh
-./configure --prefix=/bitcoinvault/depends/riscv64-linux-gnu
+./configure --prefix=/bitcoinvault/depends/x86_64-pc-linux-gnu
 make -j5
 ```
 
