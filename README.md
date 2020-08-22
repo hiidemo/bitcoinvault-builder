@@ -37,7 +37,7 @@ There are [notes in the bitcoinvault/bitcoinvault repo](https://github.com/bitco
 
 You can copy it into a container with:
 ```bash
-docker cp path/to/MacOSX10.14.sdk.tar.gz debian-depends:bitcoinvault/depends/SDKs
+docker cp path/to/MacOSX10.14.sdk.tar.gz bvault-builder:bitcoinvault/depends/SDKs
 ```
 
 ### Platform Triplets
