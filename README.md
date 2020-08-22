@@ -5,7 +5,7 @@
 The dockerfiles in this directory can be used to run `depends` builds for various `HOST`s.
 The images will contain all the dependencies required for cross compiling.
 
-For example, to build the Debian image and use it for a build targeting the `RISCV-64` host:
+For example, to build the Debian image and use it for a build targeting the `Linux amd64` host:
 
 ```bash
 # Build container
