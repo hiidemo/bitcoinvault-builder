@@ -9,10 +9,10 @@ For example, to build the Debian image and use it for a build targeting the `Lin
 
 ```bash
 # Build container
-DOCKER_BUILDKIT=1 docker build --pull --no-cache -t debian-depends .
+docker build --pull --no-cache -t bvault-builder .
 
 # Run with a Bash shell
-docker run -it --name debian-depends --workdir /bitcoinvault debian-depends /bin/bash
+docker run -it --name bvault-builder --workdir /bitcoinvault bvault-builder /bin/bash
 
 # Inside the container: build depends for RISCV-64 bit, skipping Qt packages
 make HOST=x86_64-pc-linux-gnu NO_QT=1 -C depends/ -j5
