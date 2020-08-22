@@ -9,13 +9,13 @@ For example, to build the Debian image and use it for a build targeting the `RIS
 
 ```bash
 # Build container
-DOCKER_BUILDKIT=1 docker build --pull --no-cache -f debian.dockerfile -t debian-depends .
+DOCKER_BUILDKIT=1 docker build --pull --no-cache -t debian-depends .
 
 # Run with a Bash shell
 docker run -it --name debian-depends --workdir /bitcoinvault debian-depends /bin/bash
 
 # Inside the container: build depends for RISCV-64 bit, skipping Qt packages
-make HOST=riscv64-linux-gnu NO_QT=1 -C depends/ -j5
+make HOST=x86_64-pc-linux-gnu NO_QT=1 -C depends/ -j5
 ./autogen.sh
 ./configure --prefix=/bitcoinvault/depends/riscv64-linux-gnu
 make -j5
